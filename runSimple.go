@@ -8,4 +8,11 @@ import (
 func main() {
 	resGroups := resctrl.GetResAssociation()
 	fmt.Println(resGroups)
+	rs := resctrl.NewResAssociation()
+	rs.CPUs = "2"
+	// mask = 00010000000
+
+	group := []resctrl.CacheCos{{"COS2", "80"}}
+	rs.Schemata["COS2"] = group
+	resctrl.Commit(rs, "COS2")
 }
