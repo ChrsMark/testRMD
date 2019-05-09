@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	resctrl.RemoveTasks()
 	resGroups := resctrl.GetResAssociation()
 	fmt.Println(resGroups)
 	rs := resctrl.NewResAssociation()
