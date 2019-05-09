@@ -12,7 +12,7 @@ func main() {
 	rs.CPUs = "2"
 	// mask = 00010000000
 
-	group := []resctrl.CacheCos{{"COS2", "80"}}
+	group := []resctrl.CacheCos{{0, "80"}}
 	rs.Schemata["COS2"] = group
 	resctrl.Commit(rs, "COS2")
 }
